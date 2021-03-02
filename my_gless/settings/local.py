@@ -1,5 +1,5 @@
 #python manage.py runserver --settings settings.local
-from my_krzyzakpl.settings import *
+from my_gless.settings import *
 
 DEBUG = True
 
