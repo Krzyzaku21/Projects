@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Material Design for Bootstrap</title>
+    <title>Krzyzak21 CV-Card</title>
     <!-- MDB icon -->
-    <link rel="icon" href="{% static 'mdb/favicon/mdb-favicon.ico' %}" type="image/x-icon" />
+    <link rel="icon" href="{% static 'mdb/favicon/krzyz-favicon.ico' %}" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
     <!-- Google Fonts Roboto -->
@@ -22,12 +22,64 @@
       <style>
       body {
         background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5)), url("{% static 'mdb/img/komodoisland.png' %}");
-        height: 100vh;
         background-attachment: fixed;
         background-size:cover;
         background-position: center;
-        box-shadow: inset 0 0 0px 20px #282a2d;
+        min-height: 100% !important;
+        min-height: -webkit-fill-available;
+        min-height: calc(100%);
       }
+      html {
+            height: -webkit-fill-available;
+            min-height: 100% !important;
+            height: 100%;
+        }
+      body > .pader-left {
+          position: absolute;
+          left: 0%;
+          background-color: #282a2d;
+          width: 15px;
+          min-height: 100%;
+          min-height: 100% !important;
+          min-height: -webkit-fill-available;
+          height: calc(100%);
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+          z-index: 3;
+
+      }
+    body > .pader-right {
+    position: absolute;
+    right: 0%;
+    background-color: #282a2d;
+    width: 15px;
+    min-height: 100%;
+    min-height: 100% !important;
+    min-height: -webkit-fill-available;
+    height: calc(100%);
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    z-index: 3;
+      }
+      /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #282a2d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #26A69A;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #26A69A;
+}
       @media only screen and (max-width: 600px) {
           .base-panel {
               display: flex;
@@ -39,6 +91,10 @@
     <!-- Start your project here-->
 {% include "panel.html" %}
 {% include "header.html" %}
+    <div class="pader-left">
+  </div>
+    <div class="pader-right">
+  </div>
 <div class="base-panel">
 <div class="d-flex justify-content-center" style="color:white;">
   <div class="col-2 col-sm-2" style="background-color: red;">aaa
@@ -79,8 +135,8 @@
     Tab 4 content
     </div>
 </div>
-<!-- Pills content -->
   </div>
+<!-- Pills content -->
   </div>
   </div>
     <!-- End your project here-->
