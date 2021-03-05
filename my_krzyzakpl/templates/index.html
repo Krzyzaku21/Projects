@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Krzyzak21 CV-Card</title>
     <!-- MDB icon -->
-    <link rel="icon" href="{% static 'mdb/favicon/krzyz-favicon.ico' %}" type="image/x-icon" />
+    <link rel="icon" href="{% static 'mdb/favicon/noname.ico' %}" type="image/x-icon" />
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
     <!-- Google Fonts Roboto -->
@@ -21,7 +21,7 @@
   <body>
       <style>
       body {
-        background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5)), url("{% static 'mdb/img/komodoisland.png' %}");
+        background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5)), url("{% static 'mdb/img/komodoisland_full.png' %}");
         background-attachment: fixed;
         background-size:cover;
         background-position: center;
@@ -86,6 +86,15 @@
               justify-content: flex-start;
               margin-left: 10px;
           }
+            body {
+                background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5)), url("{% static 'mdb/img/komodoisland.png' %}");
+                background-attachment: fixed;
+                background-size:cover;
+                background-position: center;
+                min-height: 100% !important;
+                min-height: -webkit-fill-available;
+                min-height: calc(100%);
+            }
       }
       </style>
     <!-- Start your project here-->
@@ -97,7 +106,9 @@
   </div>
 <div class="base-panel">
 <div class="d-flex justify-content-center" style="color:white;">
-  <div class="col-2 col-sm-2" style="background-color: red;">aaa
+  <div class="col-2 col-sm-2" style="background-color: red;">
+{% include "content_left.html" %}
+
   </div>
   <div class="col-5 col-sm-5" style="background-color: blue;">aaa
   <!-- Pills content -->
