@@ -5,8 +5,155 @@
     <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css' %}" />
   </head>
   <body>
-ggggggggggggggg
-hello local2
-hello local1
+<style>
+.tab-text {
+    background-color: rgba(79,79,79,0.5);
+    font-size: 12px;
+}
+</style>
+<div class="d-flex p-2">
+<div class="flex-column flex-fill">
+<button type="button" class="btn btn-info" style="background-color: #26A69A; width: 100%;">Personal Data</button>
+    <div class="tab-text">
+        <div class="p-1">Name: Radosław</div>
+        <div class="p-1">Surname: Krzyżagórski</div>
+        <div class="p-1">Phone: 503-325-672</div>
+        <div class="p-1">Email: krzyzak21@gmail.com</div>
+        <div class="p-1 d-flex justify-content-center">
+            <a href="{% static "cv/rk_2021.pdf" %}" download>
+                <button class="btn btn-info" style="background-color: #26A69A;">DOWNLOAD CV</button>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header p-2" id="headingOne">
+      <button
+        class="accordion-button btn btn-info"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+        style="background-color: #26A69A;"
+      >
+        Programs
+      </button>
+    </h2>
+    <div
+      id="collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingOne"
+      data-mdb-parent="#accordionExample"
+    >
+      <div class="accordion-body p-2" style="padding: 0;">
+    <div class="tab-text p-0">
+        <div class="d-flex flex-wrap justify-content-center" style="padding: 0 5px 5px 5px;">
+        <img class="w-100" src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white"/>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center" style="padding: 0 5px 5px 5px;">
+        <img class="w-100" src="https://img.shields.io/badge/DJANGO-276b1f?style=for-the-badge&logo=django&logoColor=white"/>
+        </div>
+        <div class="d-flex flex-wrap justify-content-center" style="padding: 0 5px 5px 5px;">
+        <img class="w-50" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+        <img class="w-50" src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+        </div>
+        <div class="d-flex flex-wrap justify-content-center" style="padding: 0 5px 5px 5px;">
+        <img class="w-50" src="https://img.shields.io/badge/POSTGRESQL-316192?style=for-the-badge&logo=postgresql&logoColor=white">
+        <img class="w-50" src="https://img.shields.io/badge/MYSQL-00000F?style=for-the-badge&logo=mysql&logoColor=white">
+        </div>
+        <div class="d-flex flex-wrap justify-content-center" style="padding: 0 5px 5px 5px;">
+        <img class="w-50" src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white">
+        <img class="w-50" src="https://img.shields.io/badge/NGINX-217346?style=for-the-badge&logo=nginx&logoColor=white">
+        </div>
+        <div class="d-flex flex-wrap justify-content-center" style="padding: 0 5px 5px 5px;">
+        <img class="w-50" src="https://img.shields.io/badge/VS Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
+        <img class="w-50" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white">
+        </div>
+        <div class="p-1">Want learn:</div>
+        <div class="d-flex flex-wrap justify-content-center" style="padding: 0 5px 5px 5px;">
+        <img class="w-50" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=visual%20studio%20code&logoColor=black">
+        <img class="w-50" src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white">
+        </div>
+        <div class="d-flex flex-wrap justify-content-center" style="padding: 0 5px 5px 5px;">
+        <img class="w-50" src="https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white">
+        <img class="w-50" src="https://img.shields.io/badge/Less-eeb63a?style=for-the-badge&logo=less&logoColor=white">
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header p-2" id="headingTwo">
+      <button
+        class="accordion-button collapsed btn btn-info"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#collapseTwo"
+        aria-expanded="false"
+        aria-controls="collapseTwo"
+        style="background-color: #26A69A;"
+      >
+        languages
+      </button>
+    </h2>
+    <div
+      id="collapseTwo"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingTwo"
+      data-mdb-parent="#accordionExample"
+    >
+      <div class="accordion-body p-2" style="padding: 0;">
+      <div class="tab-text p-0 center">
+      <div class="d-flex flex-wrap justify-content-center">
+        <img class="w-50" src="https://img.shields.io/badge/english-4%2F5-green?style=for-the-badge">
+        <img class="w-50" src="https://img.shields.io/badge/polish-5%2F5-green?style=for-the-badge">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header p-2" id="headingThree">
+      <button
+        class="accordion-button collapsed btn btn-info"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#collapseThree"
+        aria-expanded="false"
+        aria-controls="collapseThree"
+        style="background-color: #26A69A;"
+      >
+        Interests
+      </button>
+    </h2>
+    <div
+      id="collapseThree"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingThree"
+      data-mdb-parent="#accordionExample"
+    >
+      <div class="accordion-body p-2" style="padding: 0;">
+      <div class="tab-text p-0 center">
+      <div class="d-flex flex-wrap">
+      <ol>
+        <li>
+            <div class="p-1">Sports: Football, Darts, Billiards, Bowling, Running, Cars, Triathlon, Mtb, Road-bike, Travel</div>
+        </li>
+        <li>
+            <div class="p-1">Likes: Cinema, Movies, 1980s music, classic music</div>
+        </li>
+        <li>
+            <div class="p-1">Books: detective, fantasy, thrillers</div>
+        </li>
+      </ol>
+        </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
   </head>
