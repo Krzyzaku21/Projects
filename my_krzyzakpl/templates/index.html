@@ -1,182 +1,147 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Krzyzak21 CV-Card</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="{% static 'mdb/favicon/noname.ico' %}" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-    <!-- Google Fonts Roboto -->
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
-    />
-    <!-- MDB -->
-    <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css' %}" />
-  </head>
-  <body>
-      <style>
-      body {
-        background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5)), url("{% static 'mdb/img/komodoisland_full.png' %}");
-        background-attachment: fixed;
-        background-size:cover;
-        background-position: center;
-        min-height: 100% !important;
-        min-height: -webkit-fill-available;
-        min-height: calc(100%);
-      }
-      html {
-            height: -webkit-fill-available;
-            min-height: 100% !important;
-            height: 100%;
-        }
-      body > .pader-left {
-          position: absolute;
-          left: 0%;
-          background-color: #282a2d;
-          width: 15px;
-          min-height: 100%;
-          min-height: 100% !important;
-          min-height: -webkit-fill-available;
-          height: calc(100%);
-        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-        height: calc(var(--vh, 1vh) * 100);
-          z-index: 3;
-
-      }
-    body > .pader-right {
-    position: absolute;
-    right: 0%;
-    background-color: #282a2d;
-    width: 15px;
-    min-height: 100%;
-    min-height: 100% !important;
-    min-height: -webkit-fill-available;
-    height: calc(100%);
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-    z-index: 3;
-      }
-      /* width */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #282a2d;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #26A69A;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #26A69A;
-}
-.base-panel {
-    height: 100%;
-}
-.tab-base {
-    min-height: 100%;
-}
-.tab-right {
-    background: linear-gradient(180deg, rgba(79,79,79,0.5) 40%, rgba(35,135,200,1) 100%);
-    color: white;
-    min-height: 100%;
-}
-.tab-center {
-    width: 10px;
-    background-color: #282a2d;
-}
-.tab-left {
-    background: linear-gradient(180deg, rgba(79,79,79,0.5) 40%, rgba(35,135,200,1) 100%);
-}
-      @media only screen and (max-width: 600px) {
-          .base-panel {
-              display: flex;
-              justify-content: flex-start;
-              margin-left: 10px;
-          }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <title>Krzyzak21 CV-Card</title>
+        <!-- MDB icon -->
+        <link rel="icon" href="{% static 'mdb/favicon/noname.ico' %}" type="image/x-icon" />
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+        <!-- Google Fonts Roboto -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
+        <!-- MDB -->
+        <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css' %}" />
+    </head>
+    <body>
+        <style>
             body {
-                background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0,0,0,0.5)), url("{% static 'mdb/img/komodoisland.png' %}");
+                background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("{% static 'mdb/img/komodoisland_full.png' %}");
                 background-attachment: fixed;
-                background-size:cover;
+                background-size: cover;
                 background-position: center;
                 min-height: 100% !important;
                 min-height: -webkit-fill-available;
                 min-height: calc(100%);
             }
-      }
-      </style>
-    <!-- Start your project here-->
-{% include "panel.html" %}
-{% include "header.html" %}
-    <div class="pader-left">
-  </div>
-    <div class="pader-right">
-  </div>
-<div class="base-panel">
-<div class="tab-base d-flex justify-content-center" style="color:white;">
-  <div class="tab-right col-4 col-sm-2">
-  {% comment %} <div class="tab-right col-2 col-sm-2"> {% endcomment %}
-{% include "content_left.html" %}
+            html {
+                height: -webkit-fill-available;
+                min-height: 100% !important;
+                height: 100%;
+            }
+            body > .pader-left {
+                position: absolute;
+                left: 0%;
+                background-color: #282a2d;
+                width: 15px;
+                min-height: 100%;
+                min-height: 100% !important;
+                min-height: -webkit-fill-available;
+                height: calc(100%);
+                height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+                height: calc(var(--vh, 1vh) * 100);
+                z-index: 3;
+            }
+            body > .pader-right {
+                position: absolute;
+                right: 0%;
+                background-color: #282a2d;
+                width: 15px;
+                min-height: 100%;
+                min-height: 100% !important;
+                min-height: -webkit-fill-available;
+                height: calc(100%);
+                height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+                height: calc(var(--vh, 1vh) * 100);
+                z-index: 3;
+            }
+            /* width */
+            ::-webkit-scrollbar {
+                width: 10px;
+            }
 
-  </div>
-  <div class="tab-center" style="width: 10px;">
-  </div>
-  <div class="tab-left col-6 col-sm-5">
-  <div class="d-inline-flex p-2">I'm an inline flexbox container2!</div>
-  <!-- Pills content -->
-<div class="tab-content" id="ex2-content">
-  <div
-    class="tab-pane fade show active"
-    id="ex2-pills-1"
-    role="tabpanel"
-    aria-labelledby="ex2-tab-1"
-  >
-    Tab 1 content
-  </div>
-  <div
-    class="tab-pane fade"
-    id="ex2-pills-2"
-    role="tabpanel"
-    aria-labelledby="ex2-tab-2"
-  >
-    Tab 2 content
-  </div>
-  <div
-    class="tab-pane fade"
-    id="ex2-pills-3"
-    role="tabpanel"
-    aria-labelledby="ex2-tab-3"
-  >
-    Tab 3 content
-  </div>
-    <div
-    class="tab-pane fade"
-    id="ex2-pills-4"
-    role="tabpanel"
-    aria-labelledby="ex2-tab-4"
-    >
-    Tab 4 content
-    </div>
-</div>
-  </div>
-<!-- Pills content -->
-  </div>
-  </div>
-    <!-- End your project here-->
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #282a2d;
+            }
 
-    <!-- MDB -->
-    <script type="text/javascript" src="{% static 'mdb/js/mdb.min.js' %}"></script>
-    <!-- Custom scripts -->
-    <script type="text/javascript"></script>
-  </body>
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #26a69a;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #26a69a;
+            }
+            .base-panel {
+                height: 100%;
+            }
+            .tab-base {
+                min-height: 100%;
+            }
+            .tab-right {
+                background: linear-gradient(180deg, rgba(79, 79, 79, 0.5) 40%, rgba(35, 135, 200, 1) 100%);
+                color: white;
+                min-height: 100%;
+            }
+            .tab-center {
+                width: 10px;
+                background-color: #282a2d;
+            }
+            .tab-left {
+                background: linear-gradient(180deg, rgba(79, 79, 79, 0.5) 40%, rgba(35, 135, 200, 1) 100%);
+            }
+            body .btn-info {
+                display: flex;
+                justify-content: center;
+            }
+            @media only screen and (max-width: 700px) {
+                .base-panel {
+                    display: flex;
+                    justify-content: flex-start;
+                    margin-left: 10px;
+                }
+                body {
+                    background-image: radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("{% static 'mdb/img/komodoisland.png' %}");
+                    background-attachment: fixed;
+                    background-size: cover;
+                    background-position: center;
+                    min-height: 100% !important;
+                    min-height: -webkit-fill-available;
+                    min-height: calc(100%);
+                }
+                body .btn-info {
+                    font-size: 8px;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+        </style>
+        <!-- Start your project here-->
+        {% include "panel.html" %}
+        {% include "header.html" %}
+        <div class="pader-left"></div>
+        <div class="pader-right"></div>
+        <div class="base-panel">
+            <div class="tab-base d-flex justify-content-center" style="color: white">
+                <div class="tab-right col-5 col-sm-2">
+                {% include "content_left.html" %}
+                </div>
+                <div class="tab-center" style="width: 10px"></div>
+                <div class="tab-left col-5 col-sm-5">
+                {% include "content_right.html" %}
+                </div>
+                <!-- Pills content -->
+            </div>
+        </div>
+        <!-- End your project here-->
+
+        <!-- MDB -->
+        <script type="text/javascript" src="{% static 'mdb/js/mdb.min.js' %}"></script>
+        <!-- Custom scripts -->
+        <script type="text/javascript"></script>
+    </body>
 </html>
