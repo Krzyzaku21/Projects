@@ -5,9 +5,8 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Krzyzak21 CV-Card</title>
         <!-- MDB icon -->
-        <link rel="icon" href="{% static 'mdb/favicon/noname.ico' %}" type="image/x-icon" />
+        <link rel="icon" href="{% static 'mdb/favicon/mdb-favicon.ico' %}" type="image/x-icon" />
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
         <!-- Google Fonts Roboto -->
@@ -15,100 +14,79 @@
         <!-- MDB -->
         <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css' %}" />
     </head>
-    <style>
-        .img_border {
-            padding: 0;
-            margin: 0;
-        }
-        .my_img {
-            border: 5px solid #26a69a;
-        }
-        .span-line2 {
-            background-color: rgba(79, 79, 79, 0.5);
-            padding: 1px;
-            margin: 10px;
-            border-radius: 10px;
-        }
-        .span-line {
-            height: 10px;
-            background-color: #282a2d;
-        }
-        .card-img-top {
-            max-height: 110px;
-        }
-        .card-body {
-            color: white;
-            background-color: #282a2d;
-            height: 130px;
-        }
-        .card-title {
-            font-size: 14px;
-        }
-        .card-text {
-            font-size: 12px;
-        }
-        @media only screen and (max-width: 800px) {
-            .span-line2,
-            div#carouselExampleFade.carousel.slide.carousel-fade {
-                display: none;
-            }
-        }
-    </style>
     <body>
-        <div class="img_border d-inline-flex justify-content-center w-100">
-            <img
-                class="my_img m-2 w-50 h-50 rounded-circle align-items-center"
-                src="https://avatars.githubusercontent.com/u/70031865?s=460&u=5fcf27215599a268bfaed496d1bae305fd3a02eb&v=4"
-            />
-            <div class="span-line2">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-mdb-ride="carousel" style="color: black; padding: 10px">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="card">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..." />
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="card">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..." />
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title2</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="card">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="card-img-top" alt="..." />
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title3</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div>
-                        </div>
+        <style>
+            .left-button {
+                width: 50px;
+                height: 50px;
+                border: 5px solid #555;
+                background-color: #26a69a;
+                position: fixed;
+                transform: translate(50%, -50%);
+                top: 70%;
+                right: 35px;
+                border-radius: 1em 0 0 1em;
+                border: 2px solid #26a69a;
+                padding: 5px;
+                transition-duration: 2s;
+            }
+            .left-panel {
+                width: 20px;
+                height: 280px;
+                border: 5px solid #555;
+                background-color: #282a2d;
+                position: fixed;
+                transform: translate(0, -50%);
+                right: -20px;
+                border-radius: 1em 0 0 1em;
+                border: 5px solid #26a69a;
+                padding: 5px;
+                transition-duration: 2s;
+            }
+            .left-button:hover > .left-panel {
+                width: 110px;
+            }
+            .panel-icon {
+                position: relative;
+                color: white;
+                font-size: 2em;
+                top: calc(50% - 25px);
+            }
+            .btn-primary {
+                background-color: #26a69a;
+            }
+        </style>
+        <div class="left-button">
+            <div class="panel-icon">
+                <i class="fas fa-chevron-circle-left"></i>
+            </div>
+            <div class="left-panel">
+                <div class="d-flex flex-column">
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #3b5998" href="https://www.facebook.com/krzyzak21" role="button"
+                            ><i class="fab fa-facebook-f"></i
+                        ></a>
                     </div>
-                    <button class="carousel-control-prev" data-mdb-target="#carouselExampleFade" type="button" data-mdb-slide="prev" style="color: #26a69a; top: -55%">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" data-mdb-target="#carouselExampleFade" type="button" data-mdb-slide="next" style="color: #26a69a; top: -55%">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #ac2bac" href="https://www.instagram.com/krzyzak21/" role="button"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #0082ca" href="https://www.linkedin.com/in/radoslaw-krzyzagorski/" role="button"
+                            ><i class="fab fa-linkedin-in"></i
+                        ></a>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #333333" href="https://github.com/Krzyzaku21" role="button"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #dd4b39" href="https://www.sololearn.com/profile/19068692" role="button"
+                            ><img style="height: 12px; width: 12px; background-image: none" src="{% static 'mdb/img/sololearn.ico' %}"
+                        /></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="span-line d-inline-flex w-100"></div>
-        <!-- Pills content -->
-        <div class="tab-content" id="ex2-content">
-            <div class="tab-pane fade show active" id="ex2-pills-1" role="tabpanel" aria-labelledby="ex2-tab-1">Tab 1 content</div>
-            <div class="tab-pane fade" id="ex2-pills-2" role="tabpanel" aria-labelledby="ex2-tab-2">Tab 2 content</div>
-            <div class="tab-pane fade" id="ex2-pills-3" role="tabpanel" aria-labelledby="ex2-tab-3">Tab 3 content</div>
-            <div class="tab-pane fade" id="ex2-pills-4" role="tabpanel" aria-labelledby="ex2-tab-4">Tab 4 content</div>
         </div>
     </body>
 </html>

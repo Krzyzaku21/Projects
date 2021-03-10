@@ -16,86 +16,100 @@
         <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css' %}" />
     </head>
     <style>
-        .img_border {
-            padding: 0;
-            margin: 0;
+        .box-top {
+            flex: 1 1 0px;
         }
-        .my_img {
-            border: 5px solid #26a69a;
+        .img_border {
+            background-color: rgba(79, 79, 79, 0.5);
+        }
+        .span-line2, .span-line1{
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
+            text-align: center;
+            border: 10px solid #26a69a;
+            background-color: #282a2d;
+            margin: 5px;
         }
         .span-line2 {
-            background-color: rgba(79, 79, 79, 0.5);
-            padding: 1px;
-            margin: 10px;
-            border-radius: 10px;
+            width: 50%;
+        }
+        .span-line1 {
+            width: 50%;
         }
         .span-line {
             height: 10px;
             background-color: #282a2d;
         }
-        .card-img-top {
-            max-height: 110px;
-        }
         .card-body {
             color: white;
             background-color: #282a2d;
-            height: 130px;
         }
         .card-title {
             font-size: 14px;
         }
         .card-text {
             font-size: 12px;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-basis: 0;
         }
-        @media only screen and (max-width: 800px) {
+        .span .carousel-control-prev-icon, span .carousel-control-next-icon {
+            background-position: 75% center;
+        }
+        @media only screen and (max-width: 900px) {
             .span-line2,
             div#carouselExampleFade.carousel.slide.carousel-fade {
                 display: none;
             }
+            .span-line1 {
+                width: 40%;
+                height: 40%;
+            }
         }
     </style>
     <body>
-        <div class="img_border d-inline-flex justify-content-center w-100">
+        <div class="box-top d-inline-flex flex-row flex-nowrap">
             <img
-                class="my_img m-2 w-50 h-50 rounded-circle align-items-center"
+                class="span-line1 rounded"
                 src="https://avatars.githubusercontent.com/u/70031865?s=460&u=5fcf27215599a268bfaed496d1bae305fd3a02eb&v=4"
             />
-            <div class="span-line2">
-                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-mdb-ride="carousel" style="color: black; padding: 10px">
+            <div class="span-line2 rounded">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade p-0" data-mdb-ride="carousel" style="color: black; padding: 10px">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="card">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/182.jpg" class="card-img-top" alt="..." />
+                                <img src="{% static 'mdb\img\zuraw.jpg' %}" class="card-img-top" alt="..." />
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">Gdańsk</h5>
+                                    <p class="card-text">I was born in Gdansk, grew up here, raised myself and discovered life.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..." />
+                                <img src="{% static 'mdb\img\tor.png' %}" class="card-img-top" alt="..." />
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title2</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">Tor</h5>
+                                    <p class="card-text">My dog ​​always cheers me up, for better and for worse.</p>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item">
                             <div class="card">
-                                <img src="https://mdbootstrap.com/img/new/standard/nature/111.jpg" class="card-img-top" alt="..." />
+                                <img src="{% static 'mdb\img\merida.png' %}" class="card-img-top" alt="..." />
                                 <div class="card-body">
-                                    <h5 class="card-title">Card title3</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <h5 class="card-title">Merida</h5>
+                                    <p class="card-text">I'm interested in Triathlon. Someday I will be able to finish it.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <button class="carousel-control-prev" data-mdb-target="#carouselExampleFade" type="button" data-mdb-slide="prev" style="color: #26a69a; top: -55%">
+                    <button class="carousel-control-prev" data-mdb-target="#carouselExampleFade" type="button" data-mdb-slide="prev" style="color: #26a69a;">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" data-mdb-target="#carouselExampleFade" type="button" data-mdb-slide="next" style="color: #26a69a; top: -55%">
+                    <button class="carousel-control-next" data-mdb-target="#carouselExampleFade" type="button" data-mdb-slide="next" style="color: #26a69a;">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>

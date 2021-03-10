@@ -15,42 +15,78 @@
         <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css' %}" />
     </head>
     <body>
-        <div class="flex-hd d-flex align-items-center flex-column mb-3 justify-content-center">
-            <div class="p-2">
-                <a class="btn btn-primary" style="background-color: #3b5998" href="https://www.facebook.com/krzyzak21" role="button"><i class="fab fa-facebook-f"></i></a>
-            </div>
-            <div class="p-2">
-                <a class="btn btn-primary" style="background-color: #ac2bac" href="https://www.instagram.com/krzyzak21/" role="button"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="p-2">
-                <a class="btn btn-primary" style="background-color: #0082ca" href="https://www.linkedin.com/in/radoslaw-krzyzagorski/" role="button"
-                    ><i class="fab fa-linkedin-in"></i
-                ></a>
-            </div>
-            <div class="p-2">
-                <a class="btn btn-primary" style="background-color: #333333" href="https://github.com/Krzyzaku21" role="button"><i class="fab fa-github"></i></a>
-            </div>
-            <div class="p-2">
-                <a class="btn btn-primary" style="background-color: #dd4b39" href="https://www.sololearn.com/profile/19068692" role="button"
-                    ><img style="height: 12px; width: 12px; background-image: none" src="{% static 'mdb/img/sololearn.ico' %}"
-                /></a>
-            </div>
-        </div>
         <style>
-            .flex-hd {
-                position: absolute;
-                max-height: 270px;
-                border-radius: 25px 0px 0px 25px;
+            .left-button {
+                width: 50px;
+                height: 50px;
+                border: 5px solid #555;
+                background-color: #26a69a;
+                position: fixed;
+                transform: translate(50%, -50%);
+                top: 70%;
+                right: 35px;
+                border-radius: 1em 0 0 1em;
+                border: 2px solid #26a69a;
+                padding: 5px;
+                transition-duration: 2s;
+            }
+            .left-panel {
+                width: 20px;
+                height: 280px;
+                border: 5px solid #555;
                 background-color: #282a2d;
-                margin-right: calc(-25px);
-                padding: 10px;
+                position: fixed;
+                transform: translate(0, -50%);
+                right: -20px;
+                border-radius: 1em 0 0 1em;
+                border: 5px solid #26a69a;
+                padding: 5px;
+                transition-duration: 2s;
+            }
+            .left-button:hover > .left-panel {
+                width: 110px;
+            }
+            .panel-icon {
+                position: relative;
                 color: white;
-                right: 0%;
-                top: calc(70%);
-                transform: translate(calc(-50%), calc(-50%));
-                max-width: 80px;
-                z-index: 1;
+                font-size: 2em;
+                top: calc(50% - 25px);
+            }
+            .btn-primary {
+                background-color: #26a69a;
             }
         </style>
+        <div class="left-button">
+            <div class="panel-icon">
+                <i class="fas fa-chevron-circle-left"></i>
+            </div>
+            <div class="left-panel">
+                <div class="d-flex flex-column">
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #3b5998" href="https://www.facebook.com/krzyzak21" role="button"
+                            ><i class="fab fa-facebook-f"></i
+                        ></a>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #ac2bac" href="https://www.instagram.com/krzyzak21/" role="button"
+                            ><i class="fab fa-instagram"></i
+                        ></a>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #0082ca" href="https://www.linkedin.com/in/radoslaw-krzyzagorski/" role="button"
+                            ><i class="fab fa-linkedin-in"></i
+                        ></a>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #333333" href="https://github.com/Krzyzaku21" role="button"><i class="fab fa-github"></i></a>
+                    </div>
+                    <div class="p-2">
+                        <a class="btn btn-primary" style="background-color: #dd4b39" href="https://www.sololearn.com/profile/19068692" role="button"
+                            ><img style="height: 12px; width: 12px; background-image: none" src="{% static 'mdb/img/sololearn.ico' %}"
+                        /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
