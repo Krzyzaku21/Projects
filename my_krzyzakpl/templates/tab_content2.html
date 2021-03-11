@@ -16,6 +16,63 @@
         <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css' %}" />
     </head>
     <body>
-        tab content dos
+    <style>
+    .chess-icon {
+        font-size: 25px;
+        color: #26a69a;
+    }
+    .politech {
+        max-height: 150px;
+        border: 10px solid #26a69a;
+        border-radius: .25rem;
+        margin-bottom: 10px;
+    }
+    .span-text {
+        font-size: 10px;
+    }
+    @media only screen and (max-width: 700px) {
+        .span-text {
+            font-size: 8px;
+        }
+        .politech {
+            border: 1px solid #26a69a;
+            border-radius: .25rem;
+            margin-bottom: 10px;
+        }
+        .chess-icon {
+            font-size: 10px;
+        }
+    }
+    </style>
+        <div class="container" style="background-color: rgba(79, 79, 79, 0.5);">
+        <!-- Content here -->
+            <div class="row p-2">
+                <div class="col-12">
+                    <div class="col-12">
+                        <img class="politech col-12" src="{% static 'C:\Users\Krzyz\Desktop\Radek Python\Projects\my_krzyzakpl\static\mdb\img\pg_logo.png' %}">
+                    </div>
+                    <div class="col-12">
+                        <i class="chess-icon fas fa-chess-king"></i><span class="span-text" style="margin-left: 8px;">5-year full-time studies, 2010 - 2013 Faculty of FTIMS in the field of technical physics with specialization in applied computer science, then in 2014 - 2016 Faculty of MECH in the field of mechanics and machine construction, specialization in internal safety technologies</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-6">
+                    <i class="chess-icon fas fa-chess-knight"></i></span><span class="span-text" style="margin-left: 8px;">FTIMS<p>Thesis - Creating an application in JAVA for the Android platform, Garden designer application built using a canvas</p></span>
+                </div>
+                <div class="col-6">
+                    <i class="chess-icon fas fa-chess-pawn"></i><span class="span-text" style="margin-left: 8px;">MECH<p>Thesis - Design of a safe and functional shelter in the Autodesk Inventor palication</p></span>
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-6">
+                    <img class="politech col-12" src="{% static 'C:\Users\Krzyz\Desktop\Radek Python\Projects\my_krzyzakpl\static\mdb\img\phone_project_sm.png' %}">
+                </div>
+                <div class="col-6">
+                    <img class="politech col-12" src="{% static 'C:\Users\Krzyz\Desktop\Radek Python\Projects\my_krzyzakpl\static\mdb\img\dock_project_sm.png' %}">
+                </div>
+            </div>
+        <!-- Content here -->
+        </div>
     </body>
 </html>
