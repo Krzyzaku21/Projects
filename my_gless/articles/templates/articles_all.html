@@ -1,0 +1,14 @@
+{% extends "base.html" %} {% block articles_allone %} {% load static %}{% for all in articles_all %}
+<div class="article-bar">
+    <div><h1>{{ all.title }}</h1></div>
+    <div><h2>{{ all.pub_date }}</h2></div>
+</div>
+<div class="article-box">
+    <section>
+        {% if all.article_image %}
+        <img src="{{ all.article_image.url }}" alt="image 1" align="left" />
+        {% else %} {% endif %}
+        <span>{{ all.content }} </span>
+    </section>
+</div>
+{% endfor %} {% endblock articles_allone %}

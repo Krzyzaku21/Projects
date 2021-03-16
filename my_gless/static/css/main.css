@@ -1,0 +1,175 @@
+/* ! BODY--> */
+/* :root {
+    --white-background: #f3f3f3;
+    --fonts-color: #e2e2e2;
+    --green: #3a8c43;
+    --green2: #b0c871;
+    --green3: #689f60;
+    --green4: rgba(70, 133, 54, 0.542);
+    --red: #b14633;
+    --silver: #e6e6e6;
+    --blue: #3b5b98;
+    --dark: #1c1e21;
+} */
+/* * NAV MENU */
+@media screen and (max-width: 700px) {
+    .scrollable {
+        overflow-y: scroll;
+        height: 350px;
+        width: 100%;
+    }
+    .article-box img {
+        width: 85%;
+        border-radius: 5px;
+    }
+    .article-box span {
+        font-size: 11px;
+        width: 85%;
+    }
+    .art {
+        overflow-y: none;
+        width: 100%;
+    }
+    .pagination {
+        display: flex;
+    }
+    .pagination a {
+        padding: 1px 1px;
+    }
+    .pagination a.active {
+        width: 5px;
+    }
+}
+main {
+    background-color: var(--white-background2);
+    box-shadow: 2px 2px 5px 0px rgb(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+main article {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    width: 100%;
+    background-color: var(--white-background);
+    border-radius: 20px;
+}
+article .article-bar {
+    background-color: var(--green5);
+    width: 100%;
+    min-height: 45px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.article-bar > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.article-bar div h1 {
+    margin-left: 15px;
+    font-family: Arial, "Liberation Sans", "Droid Sans", Tahoma, "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px var(--dark);
+    font-style: italic;
+    color: var(--white-background);
+}
+.article-bar div h2 {
+    margin-top: 15px;
+    text-align: right;
+    margin-right: 15px;
+    font-family: Arial, "Liberation Sans", "Droid Sans", Tahoma, "Lucida Sans", "Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Verdana, Helvetica, sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px var(--dark);
+    font-style: italic;
+    color: var(--white-background);
+}
+article .article-box {
+    display: block;
+    padding: 10px;
+    background-color: var(--white-background);
+    position: relative;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.article-box span {
+    padding: 10px;
+    margin: 10px;
+    margin-top: 15px;
+    font-size: 13px;
+    font-family: "Times";
+}
+.article-box img {
+    height: 70%;
+    width: 50%;
+    border-radius: 20px;
+    padding: 10px;
+}
+.article-box button {
+    background-color: var(--red);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1rem;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.2);
+    font-style: italic;
+    color: var(--white-background);
+    float: right;
+}
+/* Pagination links */
+.pagination {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.pagination a {
+    color: black;
+    padding: 3px 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+    align-items: stretch;
+}
+
+/* Style the active/current link */
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 20px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Add a grey background color on mouse-over */
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    /* width: 5px; */
+    display: flex;
+    justify-content: center;
+    /* border-radius: 20px; */
+}
+article .gallery-box {
+    background-color: var(--white-background);
+    padding: 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+}
+.gallery-box .image-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: baseline;
+    grid-gap: 5px;
+}
+.image-row a > img {
+    border-radius: 5px;
+    max-width: 100%;
+}
+/* * END MENU */
+/* ! BODY--> */

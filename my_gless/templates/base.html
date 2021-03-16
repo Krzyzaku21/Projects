@@ -1,12 +1,532 @@
+{% load static %}
+{% load import_html %}
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    my gless wita
-</body>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/aside.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}" />
+        <link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css" />
+        <link href="{% static 'fontawesome_free/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesome_free/css/brands.css' %}" rel="stylesheet" type="text/css">
+        <link href="{% static 'fontawesome_free/css/solid.css' %}" rel="stylesheet" type="text/css">
+        <title>Krzyzaku website</title>
+    </head>
+    <body>
+        <!--! BODY-->
+        <!--* HEADER MENU-->
+        <header>
+            <div class="header-box">
+                <div class="menu">
+                    <meta name="viewport" content="width=device-width, initial-scale=1" />
+                    <style>
+                        .menu {
+                            position: -webkit-sticky;
+                            position: sticky;
+                            top: 0;
+                        }
+                    </style>
+                    <!--& LOGO BOX-->
+                    <div class="logo-box">
+                        <span>
+                            <a href="{% url 'base' %}">
+                                <img class="logo-1" src="{% static 'img/LOGO150x40.png' %}" />
+                                <img class="logo-2" src="{% static 'img/LOGO40x40.png' %}" />
+                            </a>
+                        </span>
+                    </div>
+                    <!--& END LOGO BOX-->
+                    <!--& PANELS BOX-->
+                    <div class="panels-box panel-0">
+                        <div class="search-box">
+                            <a class="search-btn" href="#">
+                                <i class="fas fa-search"></i>
+                            </a>
+                            <input class="search-txt" type="text" placeholder="Type to search" />
+                        </div>
+                        <div class="panel panel-1">
+                            <a href="#.html" class="panels-link"
+                                ><span class="panel-txt">About</span>
+                                <span class="panel-icon"><i class="fas fa-globe-europe"></i></span>
+                            </a>
+                        </div>
+                        <div class="panel panel-2">
+                            <a href="#.html" class="panels-link"
+                                ><span class="panel-txt">Blog</span>
+                                <span class="panel-icon"><i class="fas fa-dove"></i></span>
+                            </a>
+                        </div>
+                        <div class="panel panel-3">
+                            <a href="#.html" class="panels-link"
+                                ><span class="panel-txt">Gallery</span>
+                                <span class="panel-icon"><i class="fas fa-camera-retro"></i></span>
+                            </a>
+                        </div>
+                        <div class="panel panel-4">
+                            <a href="#.html" class="panels-link"
+                                ><span class="panel-txt">Projects</span>
+                                <span class="panel-icon"><i class="fas fa-chart-pie"></i></span>
+                            </a>
+                        </div>
+                        <div class="panel panel-5">
+                            <a href="#.html" class="panels-link"
+                                ><span class="panel-txt">References</span>
+                                <span class="panel-icon"><i class="fas fa-universal-access"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                    <!--& END PANELS BOX-->
+                    <!--& OPTIONS BOX-->
+                    <div class="options-box">
+                        <div class="panel panel-6">
+                            <div class="user-box">
+                                {% if user.social_auth.get.uid is not user.is_authenticated %}
+                                {% if user.social_auth.get.uid|length == 8 %}
+                                <img
+                                    src="https://avatars.githubusercontent.com/u/{{user.social_auth.get.uid}}?s=60&v=4"
+                                    alt="user-image"
+                                    class="user-class"
+                                />
+                                {% endif %}
+                                {% if user.social_auth.get.uid|length == 16 %}
+                                <img
+                                    src="https://graph.facebook.com/{{user.social_auth.get.uid}}/picture"
+                                    alt="user-image"
+                                    class="user-class"
+                                />
+                                {% else %}
+                                {% endif %}
+                                {% endif %}
+                                {% if user.is_authenticated %}
+                                {% for obj in register_all %}
+                                {% if user.id == obj.user_id %}
+                                <img
+                                    src="{{ obj.image_add.url }}"
+                                    alt="user-image"
+                                    class="user-class"
+                                />
+                                {% endif %}
+                                {% endfor %}
+                                {% else %}
+                                {% endif %}
+                                {% if user.is_authenticated %}
+                                <span class="user-name">{{ user.username }}<i class="user-icon"></i> </span>
+                                {% else %}
+                                <span class="user-name">Nick<i class="user-icon"></i> </span>
+                                {% endif %}
+                            </div>
+                            <div class="bell-box" type="button" tabindex="0">
+                                <a class="bell-item">
+                                    <i class="fas fa-cog"></i>
+                                </a>
+                                <div class="log-panel">
+                                    <ul>
+                                        <li>
+                                            <div class="log-button">
+                                                <div class="log-button-login">
+                                                    {% if user.is_authenticated %}
+                                                    <div class="login-hi">
+                                                    Hi {{ user.username }}!</div>
+                                                    <p><a href="{% url 'logout' %}">Log Out</a></p>
+                                                    {% else %}
+                                                </div>
+                                                <form method="POST">
+                                                    {% csrf_token %} {{ form.as_p }}
+                                                    <div class="log-text">
+                                                        <label for="log-log" class="log-txt">Login</label>
+                                                        <input type="text" name="username" class="log-name log-docker" placeholder="Login lub E-mail" />
+                                                    </div>
+                                                    <div class="log-text">
+                                                        <span class="log-txt">Hasło</span>
+                                                        <input type="password" name="password" class="log-pass log-docker" placeholder="Hasło" />
+                                                    </div>
+                                                    <fieldset class="log-button">
+                                                        <p>
+                                                            <input type="submit" class="log-btn" value="Zaloguj się" />
+                                                        </p>
+                                                    </fieldset>
+                                                    <li class="log-or">
+                                                        <span class="">lub</span>
+                                                    </li>
+                                                    <li class="fb-btn">
+                                                        <a class="log-fb" href="{% url 'social:begin' 'facebook' %}"><i class="fab fa-facebook-square"></i> <span>Zaloguj przez Facebook</span></a>
+                                                    </li>
+                                                    <li class="google-btn">
+                                                        <a class="log-google" href="#"><i class="fab fa-google"></i> <span>Zaloguj przez Google</span></a>
+                                                    </li>
+                                                    <li class="google-btn">
+                                                        <a class="log-google" style="background-color: black" href="{% url 'social:begin' 'github' %}"><i class="fab fa-github"></i> <span>Zaloguj przez Githuba</span></a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="register" class="register" href="/profile/register" title="Zarejestruj się"><span>Nie masz konta?</span> Zarejestruj się.</a>
+                                                    </li>
+                                                    <li>
+                                                        <a id="password-reset" class="register" href="{% url 'password_reset' %}" title="Przypomnij haslo"><span></span>Przypomnij haslo</a>
+                                                    </li>
+                                                </form>
+                                                {% endif %}
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--& END OPTIONS BOX-->
+                </div>
+            </div>
+        </header>
+        <!--* END HEADER MENU-->
+        <div class="fullsize-window">
+            <div class="container">
+                <!--* NAV MENU-->
+                <nav>
+                    <div class="nav-panel">
+                        <ol class="nav-menu">
+                            <li class="nav-item" id="account">
+                                <a href="#account" class="btn">Profile</a>
+                                <div class="nav-sub-menu">
+                                    <a href="#">Posts</a>
+                                    <a href="#">Info</a>
+                                    <a href="#">Photos</a>
+                                    <a href="#">Friends</a>
+                                </div>
+                            </li>
+                            <li class="nav-item" id="about">
+                                <a href="#about" class="btn">Codes</a>
+                                <div class="nav-sub-menu">
+                                    <a href="#">Python</a>
+                                    <a href="#">HTML</a>
+                                    <a href="#">CSS</a>
+                                    <a href="#">Python -> Django</a>
+                                </div>
+                            </li>
+                            <li class="nav-item" id="support">
+                                <a href="#support" class="btn">Science</a>
+                                <div class="nav-sub-menu">
+                                    <a href="{% url 'article-create' %}">Posts</a>
+                                    <a href="#">Info</a>
+                                    <a href="#">Photos</a>
+                                    <a href="#">Friends</a>
+                                </div>
+                            </li>
+                            <li class="nav-item" id="support2">
+                                <a href="#support2" class="btn">Projects</a>
+                                <div class="nav-sub-menu">
+                                    <a href="#">First project</a>
+                                    <a href="#">Second project</a>
+                                    <a href="#">Third project</a>
+                                    <a href="#">Four project</a>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                {% if user.is_authenticated %}
+                                <a href="{% url 'logout' %}" class="btn">Log Out</a>
+                                {% else %}
+                                <a href="{% url 'login' %}" class="btn">Login</a>
+                                {% endif %}
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="nav-panel">
+                        <ol class="nav-menu2">
+                            <form>
+                                <div class="form-group">
+                                    <div class="form-group-list form-group-2">
+                                        <legend>Survey</legend>
+                                        <legend>My first website rank</legend>
+                                        <label for='pickup_place'>Select one</label>
+                                        <select id='pickup_place'>
+                                            <option class='form-scale' selected='selected' >Scale 1-2 points</option>
+                                            <option class='form-scale'>Scale 3-5 points</option>
+                                            <option class='form-scale'>Scale 6-8 points</option>
+                                            <option class='form-scale'>Scale 9-10 points</option>
+                                        </select>
+                                    </div>
+                                    <div class='form-group-3'>
+                                        <fieldset class='extras'>
+                                            <legend>What shood i do next?</legend>
+                                            <label><input type='checkbox' >Diagrams</label>
+                                            <label><input type='checkbox' >Online shop</label>
+                                            <label><input type='checkbox' >Friends list</label>
+                                            <label><input type='checkbox' >Weather app</label>
+                                            <label><input type='checkbox' >Space planet app</label>
+                                            <label><input type='checkbox' >Video game</label>
+                                            <label><input type='checkbox' >Calendar app</label>
+                                        </fieldset>
+                                    </div>
+                                    <div class="form-group-4">
+                                        <div class='form-buttons'>
+                                            <button id='submit'>Submit</button>
+                                        </div>
+                                        <div class='form-buttons'>
+                                            <button id='voices'>See the voices</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                    </div>
+                </nav>
+                <!--* END NAV MENU-->
+                <!--* MAIN BAR-->
+                <main>
+                    <!--@ ARTICLE  -->
+                    <article class="scrollable">
+                        <div>
+                            {% for ten_articles in page_obj %}
+                            <div class="article-bar">
+                                <div><h1>{{ ten_articles.title }}</h1></div>
+                                <div><h2>{{ ten_articles.pub_date }}</h2></div>
+                            </div>
+                            <div class="article-box">
+                                <section>
+                                    {% if ten_articles.article_image %}
+                                    <img src="{{ ten_articles.article_image.url }}" alt="image 1" align="left" />
+                                    {% else %} {% endif %}
+                                    <span>{{ ten_articles.content | truncatewords:110 }} </span>
+                                    <div>
+                                        <a href="/articles/{{ ten_articles.id }}/"><button>Czytaj więcej</button></a>
+                                    </div>
+                                </section>
+                            </div>
+                                {% endfor %}
+                                {% block register %}
+                                {% endblock register %}
+                                {% block articles %}
+                                {% endblock articles %}
+                                {% block articles_allone %}
+                                {% endblock articles_allone %}
+                                {% block article %}
+                                {% block reset_pass %}
+                                {% endblock reset_pass %}
+                                {% block register_confirm %}
+                                {% block login %}
+                        </div>
+                        <div class="pagination">
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page=1">1</a>
+                            <a href="?page=2">2</a>
+                            <a href="?page=3">3</a>
+                            <a href="?page=4">4</a>
+                            <a href="?page=5">5</a>
+                            <a href="?page=6">6</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">last</a>
+                            <a href="/articles/all/">all &raquo;</a>
+                        </div>
+                                {% endblock login %}
+                                {% endblock register_confirm %}
+                                {% endblock article %}
+                    </article>
+                    <article class="art">
+                        <div class="article-bar">
+                            <div><h1>Gallery</h1></div>
+                        </div>
+                        <div class="gallery-box">
+                            <section>
+                                <div class="image-row">
+                                    <div class="image01">
+                                        <a href=""><img src="{% static '/img/space-odyssey.jpg' %}" /></a>
+                                    </div>
+                                    <div class="image01">
+                                        <a href=""><img src="{% static '/img/space-odyssey.jpg' %}" /></a>
+                                    </div>
+                                    <div class="image01">
+                                        <a href=""><img src="{% static '/img/space-odyssey.jpg' %}" /></a>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </article>
+                    <!--@ END ARTICLE  -->
+                </main>
+                <!--* END MAIN BAR-->
+                <!--* A-SIDE MENU-->
+                <aside>
+                    <div class="aside-box">
+                        <div class="chat-box">
+                            <div class="chat-panel">
+                                <div class="chat-left">
+                                    <div class="chat-bar"><p>Chat</p></div>
+                                    <div class="chat-txt">
+                                        <div class="chat-option">
+                                            <a href="#"
+                                                ><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
+                                            /></a>
+                                        </div>
+                                        <div class="chat-option">
+                                            <div class="chat-nick">
+                                                <div class="chat-name">name</div>
+                                                <div class="chat-surname">Surname</div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-option">
+                                            <button class="close" aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                    <div class="chat-spam">
+                                        <div class="you-message">
+                                            <div class="who-you-message">
+                                                <h2 class="msg-left">Name Surname</h2>
+                                                <h3 class="msg-left">20.01.2021</h3>
+                                            </div>
+                                            <div class="customer-message">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur in sapiente quo veniam
+                                                rerum dignissimos. Optio saepe fuga ut voluptatibus. Similique pariatur, impedit ea
+                                                necessitatibus praesentium inventore architecto id autem.
+                                            </div>
+                                        </div>
+                                        <div class="my-message">
+                                            <div class="who-my-message">
+                                                <h2 class="msg-right">Name Surname</h2>
+                                                <h3 class="msg-right">20.01.2021</h3>
+                                            </div>
+                                            <div class="sender-message">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nesciunt earum enim alias
+                                                culpa beatae ea? Culpa corrupti, nemo provident nihil magnam ipsum sunt omnis saepe, amet
+                                                minima, dolores earum!
+                                            </div>
+                                        </div>
+                                        <div class="you-message">
+                                            <div class="who-you-message">
+                                                <h2 class="msg-left">Name Surname</h2>
+                                                <h3 class="msg-left">20.01.2021</h3>
+                                            </div>
+                                            <div class="customer-message">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur in sapiente quo veniam
+                                                rerum dignissimos. Optio saepe fuga ut voluptatibus. Similique pariatur, impedit ea
+                                                necessitatibus praesentium inventore architecto id autem.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-text-send">
+                                        <a href="" class="chat-photo"><i class="fas fa-photo-video"></i></a>
+                                        <a href="" class="chat-file"><i class="fas fa-folder-open"></i></a>
+                                        <textarea class="chat-area" placeholder=""></textarea>
+                                        <button class="chat-send">Send</button>
+                                    </div>
+                                </div>
+                                <div class="chat-right">
+                                    <div class="chat-desk">
+                                        <div class="chat-list-friends">
+                                            <div class="chat-list-friends-box">
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_04.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_05.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_06.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_07.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_08.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_09.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_10.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_04.jpg"/></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-box">
+                            <div class="chat-panel">
+                                <div class="chat-left">
+                                    <div class="chat-bar"><p>Group Chat</p></div>
+                                    <div class="chat-txt">
+                                        <div class="chat-option group-option">
+                                            <a href="#"
+                                                ><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg"
+                                            /></a>
+                                        </div>
+                                        <div class="chat-option">
+                                            <div class="chat-nick">
+                                                <div class="group-name">Group Name</div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-option">
+                                            <button class="close" aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                    <div class="chat-spam">
+                                        <div class="you-message">
+                                            <div class="who-you-message">
+                                                <h2 class="msg-left">Name Surname</h2>
+                                                <h3 class="msg-left">20.01.2021</h3>
+                                            </div>
+                                            <div class="group2-message">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur in sapiente quo veniam
+                                                rerum dignissimos. Optio saepe fuga ut voluptatibus. Similique pariatur, impedit ea
+                                                necessitatibus praesentium inventore architecto id autem.
+                                            </div>
+                                        </div>
+                                        <div class="my-message">
+                                            <div class="who-my-message">
+                                                <h2 class="msg-right">Name Surname</h2>
+                                                <h3 class="msg-right">20.01.2021</h3>
+                                            </div>
+                                            <div class="group1-message">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum nesciunt earum enim alias
+                                                culpa beatae ea? Culpa corrupti, nemo provident nihil magnam ipsum sunt omnis saepe, amet
+                                                minima, dolores earum!
+                                            </div>
+                                        </div>
+                                        <div class="you-message">
+                                            <div class="who-you-message">
+                                                <h2 class="msg-left">Name Surname</h2>
+                                                <h3 class="msg-left">20.01.2021</h3>
+                                            </div>
+                                            <div class="group2-message">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur in sapiente quo veniam
+                                                rerum dignissimos. Optio saepe fuga ut voluptatibus. Similique pariatur, impedit ea
+                                                necessitatibus praesentium inventore architecto id autem.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-text-send">
+                                        <a href="" class="chat-photo"><i class="fas fa-photo-video"></i></a>
+                                        <a href="" class="chat-file"><i class="fas fa-folder-open"></i></a>
+                                        <textarea class="chat-area" placeholder=""></textarea>
+                                        <button class="chat-send">Post</button>
+                                    </div>
+                                </div>
+                                <div class="chat-right">
+                                    <div class="chat-desk">
+                                        <div class="chat-list-friends group-list">
+                                            <div class="group-list-box">
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_04.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_05.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_06.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_07.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_08.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_09.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_10.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg"/></a>
+                                                <a href="#"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_04.jpg"/></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+                <!--* END A-SIDE MENU-->
+            </div>
+        </div>
+        <footer>
+            {% import_html 1 %}
+        </footer>
+    </body>
+    <!--! END BODY-->
 </html>
