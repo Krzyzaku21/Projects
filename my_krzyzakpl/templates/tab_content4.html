@@ -16,36 +16,36 @@
         <link rel="stylesheet" href="{% static 'mdb/css/mdb.min.css' %}" />
     </head>
     <style>
-    .text-pos {
-        font-size: 11px;
-        line-height: 3em;
-    }
-    .pol-proj {
-        background: linear-gradient(180deg, rgba(40,42,45,0.7) 50%, rgba(38,166,154,0.5) 100%);
-        border: 5px solid #26a69a;
-        border-radius: .25rem;
-        margin-bottom: 10px;
-    }
-    .image-proj {
-        border: 10px solid #26a69a;
-        border-radius: .25rem;
-        margin-bottom: 10px;
-    }
-    @media only screen and (max-width: 700px) {
         .text-pos {
-            font-size: 8px;
-            line-height: 2em;
-            border-bottom: 5px solid #26a69a;
+            font-size: 11px;
+            line-height: 3em;
         }
-        .title-text {
-            font-size: 10px;
+        .pol-proj {
+            background: linear-gradient(180deg, rgba(40, 42, 45, 0.7) 50%, rgba(38, 166, 154, 0.5) 100%);
+            border: 5px solid #26a69a;
+            border-radius: 0.25rem;
+            margin-bottom: 10px;
         }
         .image-proj {
-        border: 1px solid #26a69a;
-        border-radius: .25rem;
-        margin-bottom: 10px;
+            border: 10px solid #26a69a;
+            border-radius: 0.25rem;
+            margin-bottom: 10px;
         }
-    }
+        @media only screen and (max-width: 700px) {
+            .text-pos {
+                font-size: 8px;
+                line-height: 2em;
+                border-bottom: 5px solid #26a69a;
+            }
+            .title-text {
+                font-size: 10px;
+            }
+            .image-proj {
+                border: 1px solid #26a69a;
+                border-radius: 0.25rem;
+                margin-bottom: 10px;
+            }
+        }
     </style>
     <body>
         <div class="container">
@@ -53,7 +53,48 @@
                 <div class="d-flex w-100 justify-content-center p-2">
                     <div class="pol-proj w-100">
                         <div class="d-flex flex-wrap">
-                        {% comment %} project 3 {% endcomment %}
+                            {% comment %} project 3 {% endcomment %}
+                            <div class="col-12 col-sm-6 title-text">
+                                <div class="col">
+                                    <div class="d-flex justify-content-center p-2">Project no: 4</div>
+                                </div>
+                                <div class="col p-3">
+                                    <div class="d-flex justify-content-center">
+                                        <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel">
+                                            <div class="carousel-indicators">
+                                                <button
+                                                    type="button"
+                                                    data-mdb-target="#carouselExampleIndicators"
+                                                    data-mdb-slide-to="0"
+                                                    class="active"
+                                                    aria-current="true"
+                                                    aria-label="Slide 1"
+                                                ></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+                                            </div>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="{% static 'mdb\img\proj1.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj1_1.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj1_2.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 title-text">
+                                <div class="text-pos d-flex flex-column justify-content-center p-2">
+                                    <p class="d-flex justify-content-center"><a style="color: red; font-size: 15px" href="https://gless.click/">gless.click</a></p>
+                                    <div>words</div>
+                                </div>
+                            </div>
+                            {% comment %} end project 3 {% endcomment %} {% comment %} project 3 {% endcomment %}
                             <div class="col-12 col-sm-6 title-text">
                                 <div class="col">
                                     <div class="d-flex justify-content-center p-2">Project no: 3</div>
@@ -62,49 +103,23 @@
                                     <div class="d-flex justify-content-center">
                                         <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel">
                                             <div class="carousel-indicators">
-                                            <button
-                                                type="button"
-                                                data-mdb-target="#carouselExampleIndicators"
-                                                data-mdb-slide-to="0"
-                                                class="active"
-                                                aria-current="true"
-                                                aria-label="Slide 1"
-                                            ></button>
-                                            <button
-                                                type="button"
-                                                data-mdb-target="#carouselExampleIndicators"
-                                                data-mdb-slide-to="1"
-                                                aria-label="Slide 2"
-                                            ></button>
-                                            <button
-                                                type="button"
-                                                data-mdb-target="#carouselExampleIndicators"
-                                                data-mdb-slide-to="2"
-                                                aria-label="Slide 3"
-                                            ></button>
+                                                <button
+                                                    type="button"
+                                                    data-mdb-target="#carouselExampleIndicators"
+                                                    data-mdb-slide-to="0"
+                                                    class="active"
+                                                    aria-current="true"
+                                                    aria-label="Slide 1"
+                                                ></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="1" aria-label="Slide 2"></button>
                                             </div>
                                             <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img
-                                                src="{% static 'mdb\img\proj1.png' %}"
-                                                class="image-proj mw-100"
-                                                alt="..."
-                                                />
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img
-                                                src="{% static 'mdb\img\proj1_1.png' %}"
-                                                class="image-proj mw-100"
-                                                alt="..."
-                                                />
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img
-                                                src="{% static 'mdb\img\proj1_2.png' %}"
-                                                class="image-proj mw-100"
-                                                alt="..."
-                                                />
-                                            </div>
+                                                <div class="carousel-item active">
+                                                    <img src="{% static 'mdb\img\proj3_1.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj3_2.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -112,12 +127,14 @@
                             </div>
                             <div class="col-12 col-sm-6 title-text">
                                 <div class="text-pos d-flex flex-column justify-content-center p-2">
-                                    <p class="d-flex justify-content-center" ><a style="color: red; font-size: 15px;" href="https://gless.click/">gless.click</a></p>
-                                    <div>więcej tekstu</div>
+                                    <p class="d-flex justify-content-center"><a style="color: red; font-size: 15px" href="https://krzyzak21.pl/">krzyzak21.pl</a></p>
+                                    <div>
+                                        The project is based only on HTML5 and CSS3 using Bootstrap. Site loadability 98%. Using Django only to link UWSGI to the settings. For
+                                        further connection to NGINX via VPS server. This is a normal 1 page resume page.
+                                    </div>
                                 </div>
                             </div>
-                            {% comment %} end project 3 {% endcomment %}
-                            {% comment %} project 2 {% endcomment %}
+                            {% comment %} end project 3 {% endcomment %} {% comment %} project 2 {% endcomment %}
                             <div class="col-12 col-sm-6 title-text">
                                 <div class="col">
                                     <div class="d-flex justify-content-center p-2">Project no: 2</div>
@@ -125,109 +142,66 @@
                                 <div class="col p-3">
                                     <div class="d-flex flex-column justify-content-center">
                                         <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel">
-                                        <div class="carousel-indicators">
-                                        <button
-                                            type="button"
-                                            data-mdb-target="#carouselExampleIndicators"
-                                            data-mdb-slide-to="0"
-                                            class="active"
-                                            aria-current="true"
-                                            aria-label="Slide 1"
-                                        ></button>
-                                        <button
-                                            type="button"
-                                            data-mdb-target="#carouselExampleIndicators"
-                                            data-mdb-slide-to="1"
-                                            aria-label="Slide 2"
-                                        ></button>
-                                        <button
-                                            type="button"
-                                            data-mdb-target="#carouselExampleIndicators"
-                                            data-mdb-slide-to="2"
-                                            aria-label="Slide 3"
-                                        ></button>
-                                        </div>
-                                        <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img
-                                            src="{% static 'mdb\img\proj2.png' %}"
-                                            class="image-proj mw-100"
-                                            alt="..."
-                                            />
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img
-                                            src="{% static 'mdb\img\proj2_1.png' %}"
-                                            class="image-proj mw-100"
-                                            alt="..."
-                                            />
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img
-                                            src="{% static 'mdb\img\proj2_2.png' %}"
-                                            class="image-proj mw-100"
-                                            alt="..."
-                                            />
-                                        </div>
-                                        </div>
+                                            <div class="carousel-indicators">
+                                                <button
+                                                    type="button"
+                                                    data-mdb-target="#carouselExampleIndicators"
+                                                    data-mdb-slide-to="0"
+                                                    class="active"
+                                                    aria-current="true"
+                                                    aria-label="Slide 1"
+                                                ></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+                                            </div>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="{% static 'mdb\img\proj2.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj2_1.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj2_2.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                            </div>
                                         </div>
                                         <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel">
-                                        <div class="carousel-indicators">
-                                        <button
-                                            type="button"
-                                            data-mdb-target="#carouselExampleIndicators"
-                                            data-mdb-slide-to="0"
-                                            class="active"
-                                            aria-current="true"
-                                            aria-label="Slide 1"
-                                        ></button>
-                                        <button
-                                            type="button"
-                                            data-mdb-target="#carouselExampleIndicators"
-                                            data-mdb-slide-to="1"
-                                            aria-label="Slide 2"
-                                        ></button>
-                                        <button
-                                            type="button"
-                                            data-mdb-target="#carouselExampleIndicators"
-                                            data-mdb-slide-to="2"
-                                            aria-label="Slide 3"
-                                        ></button>
-                                        </div>
-                                        <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img
-                                            src="{% static 'mdb\img\proj2_3.png' %}"
-                                            class="image-proj mw-100"
-                                            alt="..."
-                                            />
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img
-                                            src="{% static 'mdb\img\proj2_5.png' %}"
-                                            class="image-proj mw-100"
-                                            alt="..."
-                                            />
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img
-                                            src="{% static 'mdb\img\proj2_6.png' %}"
-                                            class="image-proj mw-100"
-                                            alt="..."
-                                            />
-                                        </div>
-                                        </div>
+                                            <div class="carousel-indicators">
+                                                <button
+                                                    type="button"
+                                                    data-mdb-target="#carouselExampleIndicators"
+                                                    data-mdb-slide-to="0"
+                                                    class="active"
+                                                    aria-current="true"
+                                                    aria-label="Slide 1"
+                                                ></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+                                            </div>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="{% static 'mdb\img\proj2_3.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj2_5.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj2_6.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 title-text">
                                 <div class="text-pos d-flex justify-content-center p-2">
-                                    The project, written in Autocad Inventor, the bunker was designed to withstand a direct impact at a distance of no closer than 5 km. The endurance tests on the entire rearm were successful. The shelter was built using a container for this. The project has two entrances, sewerage, pantries, air filter, water filter, and a power generator.
+                                    The project, written in Autocad Inventor, the bunker was designed to withstand a direct impact at a distance of no closer than 5 km. The
+                                    endurance tests on the entire rearm were successful. The shelter was built using a container for this. The project has two entrances,
+                                    sewerage, pantries, air filter, water filter, and a power generator.
                                 </div>
                             </div>
-                            {% comment %} end project 2 {% endcomment %}
-                            {% comment %} project 1 {% endcomment %}
+                            {% comment %} end project 2 {% endcomment %} {% comment %} project 1 {% endcomment %}
                             <div class="col-12 col-sm-6 title-text">
                                 <div class="col">
                                     <div class="d-flex justify-content-center p-2">Project no: 1</div>
@@ -236,75 +210,35 @@
                                     <div class="d-flex justify-content-center">
                                         <div id="carouselExampleIndicators" class="carousel slide" data-mdb-ride="carousel">
                                             <div class="carousel-indicators">
-                                            <button
-                                                type="button"
-                                                data-mdb-target="#carouselExampleIndicators"
-                                                data-mdb-slide-to="0"
-                                                class="active"
-                                                aria-current="true"
-                                                aria-label="Slide 1"
-                                            ></button>
-                                            <button
-                                                type="button"
-                                                data-mdb-target="#carouselExampleIndicators"
-                                                data-mdb-slide-to="1"
-                                                aria-label="Slide 2"
-                                            ></button>
-                                            <button
-                                                type="button"
-                                                data-mdb-target="#carouselExampleIndicators"
-                                                data-mdb-slide-to="2"
-                                                aria-label="Slide 3"
-                                            ></button>
-                                            <button
-                                                type="button"
-                                                data-mdb-target="#carouselExampleIndicators"
-                                                data-mdb-slide-to="3"
-                                                aria-label="Slide 4"
-                                            ></button>
-                                            <button
-                                                type="button"
-                                                data-mdb-target="#carouselExampleIndicators"
-                                                data-mdb-slide-to="4"
-                                                aria-label="Slide 5"
-                                            ></button>
+                                                <button
+                                                    type="button"
+                                                    data-mdb-target="#carouselExampleIndicators"
+                                                    data-mdb-slide-to="0"
+                                                    class="active"
+                                                    aria-current="true"
+                                                    aria-label="Slide 1"
+                                                ></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="1" aria-label="Slide 2"></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="2" aria-label="Slide 3"></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="3" aria-label="Slide 4"></button>
+                                                <button type="button" data-mdb-target="#carouselExampleIndicators" data-mdb-slide-to="4" aria-label="Slide 5"></button>
                                             </div>
                                             <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img
-                                                src="{% static 'mdb\img\proj1.png' %}"
-                                                class="image-proj mw-100"
-                                                alt="..."
-                                                />
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img
-                                                src="{% static 'mdb\img\proj1_1.png' %}"
-                                                class="image-proj mw-100"
-                                                alt="..."
-                                                />
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img
-                                                src="{% static 'mdb\img\proj1_2.png' %}"
-                                                class="image-proj mw-100"
-                                                alt="..."
-                                                />
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img
-                                                src="{% static 'mdb\img\proj1_3.png' %}"
-                                                class="image-proj mw-100"
-                                                alt="..."
-                                                />
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img
-                                                src="{% static 'mdb\img\proj1_4.png' %}"
-                                                class="image-proj mw-100"
-                                                alt="..."
-                                                />
-                                            </div>
+                                                <div class="carousel-item active">
+                                                    <img src="{% static 'mdb\img\proj1.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj1_1.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj1_2.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj1_3.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="{% static 'mdb\img\proj1_4.png' %}" class="image-proj mw-100" alt="..." />
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -312,7 +246,9 @@
                             </div>
                             <div class="col-12 col-sm-6 title-text">
                                 <div class="text-pos d-flex justify-content-center p-2">
-                                    Project written in Java, transferred to the android platform. Personally designed touch buttons. Registration panel, through data in JSON files, serialized and deserialized with the md5 key. Possibility to save projects for registered users. Moving items from the list onto the canvas grid. Locking elements with a padlock on the grid. Making a cost estimate for a garden project.
+                                    Project written in Java, transferred to the android platform. Personally designed touch buttons. Registration panel, through data in JSON
+                                    files, serialized and deserialized with the md5 key. Possibility to save projects for registered users. Moving items from the list onto the
+                                    canvas grid. Locking elements with a padlock on the grid. Making a cost estimate for a garden project.
                                 </div>
                             </div>
                             {% comment %} end project 1 {% endcomment %}
