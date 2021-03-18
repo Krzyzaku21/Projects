@@ -1,24 +1,21 @@
-# python manage.py runserver --settings settings.local
+# python manage.py runserver --settings settings.local2
 from my_krzyzak21.settings import *
 import json
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-with open('/secret_keys/keys_my_krzyzak21.json') as config_file:
+with open('C:/Users/Krzyz/Desktop/Radek Python/secret_keys/keys_my_krzyzak21.json') as config_file:
     config = json.load(config_file)
 
 SECRET_KEY = config['SECRET_KEY']
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config['NAME'],
         'USER': config['USER'],
         'PASSWORD': config['PASSWORD'],
         'HOST': config['HOST'],
-        'PORT': '3306',
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
+        'PORT': '5432',
     }
 }
 
