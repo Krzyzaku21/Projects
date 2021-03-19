@@ -15,10 +15,7 @@ DATABASES = {
         'USER': config['USER'],
         'PASSWORD': config['PASSWORD'],
         'HOST': config['HOST'],
-        'PORT': '3306',
-        'OPTIONS': {
-            'charset': 'utf8mb4',
-        },
+        'PORT': '5432',
     }
 }
 
