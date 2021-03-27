@@ -123,19 +123,14 @@
             }
         </style>
         <!-- Start your project here-->
-        {% include "panel.html" %}
-        {% include "header.html" %}
+        {% include "panel.html" %} {% include "header.html" %}
         <div class="pader-left v-100vh"></div>
         <div class="pader-right"></div>
         <div class="base-panel">
             <div class="tab-base d-flex justify-content-center" style="color: white">
-                <div class="tab-right col-5 col-sm-2">
-                {% include "content_left.html" %}
-                </div>
+                <div class="tab-right col-5 col-sm-2">{% include "content_left.html" %}</div>
                 <div class="tab-center" style="width: 10px"></div>
-                <div class="tab-left col-5 col-sm-5">
-                {% include "content_right.html" %}
-                </div>
+                <div class="tab-left col-5 col-sm-5">{% include "content_right.html" %}</div>
                 <!-- Pills content -->
             </div>
         </div>

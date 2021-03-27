@@ -20,7 +20,23 @@ from django.conf.urls.static import static
 from django.views.generic import TemplateView
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name="base.html")),
+    path('', TemplateView.as_view(template_name="base.html"), name="base"),
+    # more pages
+    path('404/', TemplateView.as_view(template_name="404.html"), name="404"),
+    path('dashboard/', TemplateView.as_view(template_name="dashboard.html"), name="dashboard"),
+    # to users
+    path('login/', TemplateView.as_view(template_name="to_users/login.html"), name="login"),
+    path('register/', TemplateView.as_view(template_name="to_users/register.html"), name="register"),
+    path('forgot_password/', TemplateView.as_view(template_name="to_users/forgot-password.html"), name="forgot-password"),
+    # to remove
+    path('buttons/', TemplateView.as_view(template_name="to_remove/buttons.html"), name="buttons"),
+    path('cards/', TemplateView.as_view(template_name="to_remove/cards.html"), name="cards"),
+    path('tables/', TemplateView.as_view(template_name="to_remove/tables.html"), name="tables"),
+    path('charts/', TemplateView.as_view(template_name="to_remove/charts.html"), name="charts"),
+    path('animation/', TemplateView.as_view(template_name="to_remove/utilities-animation.html"), name="animation"),
+    path('border/', TemplateView.as_view(template_name="to_remove/utilities-border.html"), name="border"),
+    path('color/', TemplateView.as_view(template_name="to_remove/utilities-color.html"), name="color"),
+    path('other/', TemplateView.as_view(template_name="to_remove/utilities-other.html"), name="other"),
 ]
 
 
