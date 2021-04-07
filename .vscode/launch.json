@@ -1,0 +1,27 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "name": "krzyzak21 django",
+        //     "type": "python",
+        //     "request": "launch",
+        //     "program": "my_krzyzak21/debugger.py",
+        //     "args": ["runserver"],
+        //     "django": true
+        // },
+        {
+            "name": "krzyzak21 django",
+            "type": "python",
+            "request": "launch",
+            "program": "my_krzyzak21/manage.py",
+            "env": {
+                "DJANGO_SETTINGS_MODULE": "settings.local2"
+            },
+            "args": ["runserver"],
+            "django": true
+        }
+    ]
+}

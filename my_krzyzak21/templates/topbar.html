@@ -1,4 +1,10 @@
+{% load static %}
 <style>
+    @media screen and (max-width: 700px) {
+        .topbar {
+            padding: 13px !important;
+        }
+    }
     .topbar {
         background-color: #303030;
         color: white;
@@ -68,7 +74,7 @@
 <!-- Topbar -->
 <nav class="navbar navbar-expand topbar mb-4 static-top shadow p-0">
     <!-- Sidebar Toggle (Topbar) -->
-    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle">
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle bg-danger">
         <i class="fa fa-bars"></i>
     </button>
     <!-- Topbar Search -->
@@ -112,7 +118,7 @@
     </style>
     <ul class="nav-list1 navbar-nav me-auto">
         <li class="nav-item1 nav-item d-none d-sm-block">
-            <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="#"><span class="text-white small">Główna</span></a>
+            <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="{% url 'blog:post_list' %}"><span class="text-white small">Blog</span></a>
         </li>
         <li class="d-xl-none p-1">
             <a class="nav-icon btn btn-circle btn-sm text-white" href="/" role="button"><i class="fas fa-home"></i></a>
