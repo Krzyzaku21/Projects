@@ -17,7 +17,7 @@
 {% endwith %} {% for comment in comments %}
 <div class="comment">
     <p class="info">Komentarz {{ forloop.counter }} dodany przez {{ comment.name }} {{ comment.created }}</p>
-    {{ comment.body|linebreaks }}
+    {{ comment.body|markdown }}
 </div>
 {% empty %}
 <p>Nie ma żadnych komentarzy.</p>

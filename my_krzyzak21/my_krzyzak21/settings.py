@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'taggit',
     'django.contrib.sites',
     'django.contrib.sitemaps',
+    'django.contrib.postgres',
 ]
 INSTALLED_APPS = ['django_db_prefix', ] + INSTALLED_APPS
 

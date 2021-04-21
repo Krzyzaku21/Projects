@@ -1,6 +1,21 @@
 {% extends "base.html" %} {% block title %}Mój blog {% endblock title %} {% block Pages %}{% load static %}{% load blog_tags %}
 <div class="content">
-
+<div class="d-sm-flex justify-content-md-end aligh-items-center mb-4">
+    <div class='col-xl-3 col-md-6 mb-4'>
+        <div class='card border-left-info shadow h-100 py-2'>
+            <div class='card-body'>
+            <div class="row no-gutters d-flex align-items-center justify-content-center">
+                <div class="">
+                        <a href="{% url "blog:post_feed" %}">Subskrybuj RSS</a>
+                        <p>ilośc postów {% total_posts %}</p>
+                        <h3>Najnowsze posty</h3>
+                        {% show_latest_posts 3 %}
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="sidebar">
     <h1 class="d-flex justify-content-center align-items-center">Mój blog</h1>
     <p> Obecna ilość opublikowanych blogów: {% total_posts %}</p>

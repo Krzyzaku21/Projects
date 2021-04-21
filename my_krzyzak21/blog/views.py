@@ -1,13 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, EmailPostForm, SearchForm
 from django.views import View
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
-from .forms import EmailPostForm
 from django.core.mail import send_mail
 from taggit.models import Tag
 from django.db.models import Count
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 # Create your views here.
 
 
@@ -89,3 +89,25 @@ def post_detail(request, year, month, day, post):
         'similar_posts': similar_posts,
     }
     return render(request, 'detail.html', context)
+
+
+def post_search(request):
+    form = SearchForm()
+    query = None
+    results = []
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            # results = Post.objects.annotate(search=SearchVector('title', 'body'),).filter(search=query)
+            search_vector = SearchVector('title', 'body', 'tags')
+            search_query = SearchQuery(query)
+            results = Post.objects.annotate(
+                search=search_vector, rank=SearchRank(search_vector, search_query)).filter(
+                search=search_query).order_by('-rank')
+    context = {
+        'form': form,
+        'query': query,
+        'results': results
+    }
+    return render(request, 'search.html', context)

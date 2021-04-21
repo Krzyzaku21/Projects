@@ -18,11 +18,19 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from django.contrib.sitemaps.views import sitemap
+from blog.sitemaps import PostSitemap
+
+sitemaps = {
+    'post': PostSitemap,
+}
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name="base.html"), name="base"),
     # my pages
     path('blog/', include('blog.urls', namespace='blog')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     # more pages
     path('404/', TemplateView.as_view(template_name="404.html"), name="404"),
     path('dashboard/', TemplateView.as_view(template_name="dashboard.html"), name="dashboard"),
