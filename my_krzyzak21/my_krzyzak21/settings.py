@@ -27,7 +27,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Application definition
 
-SITE_ID = 1
+SITE_ID = 9
 
 INSTALLED_APPS = [
     'django.contrib.admin',
