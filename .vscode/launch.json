@@ -17,11 +17,11 @@
             "type": "python",
             "request": "launch",
             "program": "my_krzyzak21/manage.py",
+            "django": true,
             "env": {
                 "DJANGO_SETTINGS_MODULE": "settings.local2"
             },
-            "args": ["runserver"],
-            "django": true
+            "args": ["runserver"]
         }
     ]
 }

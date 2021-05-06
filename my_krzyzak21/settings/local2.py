@@ -1,4 +1,5 @@
 # python manage.py runserver --settings settings.local2
+# python debugger.py runserver_plus --cert-file cert.crt
 from my_krzyzak21.settings import *
 import json
 import os
@@ -22,8 +23,9 @@ DATABASES = {
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['krzyzak21.space', 'localhost', '127.0.0.1']
 
+RUNSERVERPLUS_SERVER_ADDRESS_PORT = 'krzyzak21.space:8000'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
@@ -39,3 +41,7 @@ EMAIL_HOST_USER = config['EMAIL_HOST_USER']
 EMAIL_HOST_PASSWORD = config['EMAIL_HOST_PASSWORD']
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+# SOCIAL
+SOCIAL_AUTH_FACEBOOK_KEY = config['SOCIAL_AUTH_FACEBOOK_KEY']
+SOCIAL_AUTH_FACEBOOK_SECRET = config['SOCIAL_AUTH_FACEBOOK_SECRET']

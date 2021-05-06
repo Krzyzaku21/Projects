@@ -9,24 +9,51 @@
                     <div class="text-center">
                         <h1 class="h4 text-gray-900 mb-4">Stwórz konto!</h1>
                     </div>
-                    <form class="user">
+                    <form class="user" action="." method="post" enctype="multipart/form-data">
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Podaj imię" />
+                                <input
+                                    type="text"
+                                    name="first_name"
+                                    class="form-control form-control-user"
+                                    id="exampleFirstName"
+                                    placeholder="{{ user_form.first_name.label }}"
+                                />
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Podaj nazwisko" />
+                                <input
+                                    type="text"
+                                    name="last_name"
+                                    class="form-control form-control-user"
+                                    id="exampleLastName"
+                                    placeholder="{{ user_form.last_name.label }}"
+                                />
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Podaj email" />
+                            <input type="text" name="username" class="form-control form-control-user" id="exampleUsername" placeholder="{{ user_form.username.label }}" />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="{{ user_form.email.label }}" />
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Podaj hasło" />
+                                <input
+                                    type="password"
+                                    name="password"
+                                    class="form-control form-control-user"
+                                    id="exampleInputPassword"
+                                    placeholder="{{ user_form.password.label }}"
+                                />
                             </div>
                             <div class="col-sm-6">
-                                <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Powtórz hasło" />
+                                <input
+                                    type="password"
+                                    name="password2"
+                                    class="form-control form-control-user"
+                                    id="exampleRepeatPassword"
+                                    placeholder="{{ user_form.password2.label }}"
+                                />
                             </div>
                         </div>
                         <div class="form-group row">
@@ -76,15 +103,17 @@
                                 cursor: pointer;
                             }
                         </style>
-                        <a href="{% url 'login' %}" class="btn btn-primary btn-user btn-block"> Rejestracja </a>
+                        <input type="submit" class="btn btn-primary btn-user btn-block" value="Rejestacja" />
+                        {% comment %} <a href="{% url 'register_done' %}" class="btn btn-primary btn-user btn-block"> Rejestracja </a> {% endcomment %}
                         <hr />
                         <a href="{% url 'login' %}" class="btn btn-github btn-user btn-block text-white bg-dark"> <i class="fab fa-github fa-fw"></i> Rejestracja z Github </a>
                         <a href="{% url 'login' %}" class="btn btn-google btn-user btn-block"> <i class="fab fa-google fa-fw"></i> Rejestracja z Google </a>
                         <a href="{% url 'login' %}" class="btn btn-facebook btn-user btn-block"> <i class="fab fa-facebook-f fa-fw"></i> Rejestracja z Facebook </a>
+                        {% csrf_token %}
                     </form>
                     <hr />
                     <div class="text-center">
-                        <a class="small" href="{% url 'forgot-password' %}">Zapomniałeś hasła?</a>
+                        <a class="small" href="{% url 'password_reset' %}">Zapomniałeś hasła?</a>
                     </div>
                     <div class="text-center">
                         <a class="small" href="{% url 'login' %}">Masz konto? Zaloguj się!</a>

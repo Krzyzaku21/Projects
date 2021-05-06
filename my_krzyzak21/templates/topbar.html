@@ -118,7 +118,9 @@
     </style>
     <ul class="nav-list1 navbar-nav me-auto">
         <li class="nav-item1 nav-item d-none d-sm-block">
-            <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="{% url 'blog:post_list' %}"><span class="text-white small">Blog</span></a>
+            <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="{% url 'blog:post_list' %}"
+                ><span class="text-white small">Blog</span></a
+            >
         </li>
         <li class="d-xl-none p-1">
             <a class="nav-icon btn btn-circle btn-sm text-white" href="/" role="button"><i class="fas fa-home"></i></a>
@@ -126,7 +128,9 @@
     </ul>
     <ul class="nav-list1 navbar-nav me-auto">
         <li class="nav-item1 nav-item d-none d-sm-block">
-            <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="#"><span class="text-white small">Galeria</span></a>
+            <a class="nav-link d-flex justify-content-center align-items-center" aria-current="page" href="{% url 'gallery' %}"
+                ><span class="text-white small">Galeria</span></a
+            >
         </li>
         <li class="d-xl-none p-1">
             <a class="nav-icon btn btn-circle btn-sm text-white" href="/" role="button"><i class="fas fa-video"></i></a>
@@ -299,24 +303,39 @@
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {% if user.is_authenticated %}
+                <span class="mr-2 d-none d-lg-inline text-warning small mr-3">{{ user.username }}</span>
+                {% if user.profile.photo %}
+                <img class="img-profile rounded-circle" src="{{ user.profile.get_absolute_image }}" />
+                {% else %}
+                <img class="img-profile rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" />
+                {% endif %} {% else %}
                 <span class="mr-2 d-none d-lg-inline text-warning small mr-3">Nick</span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" />
+                {% endif %}
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#">
+                {% if request.user.is_authenticated %}
+                <a class="dropdown-item" href="{% url 'profile' %}">
                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                     Profil
                 </a>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="{% url 'edit' %}">
                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                     Ustawienia
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="{% url 'logout' %}" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                     Wyloguj
                 </a>
+                {% else %}
+                <a class="dropdown-item" href="{% url 'login' %}">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Zaloguj
+                </a>
+                {% endif %}
             </div>
         </li>
     </ul>

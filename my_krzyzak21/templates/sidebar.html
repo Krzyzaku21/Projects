@@ -69,10 +69,17 @@
         <div id="collapsePanel" class="collapse" aria-labelledby="headingPanel" data-parent="#accordionSidebar">
             <div class="collapse-style py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Sterowanie:</h6>
+                {% if request.user.is_authenticated %}
+                <a class="collapse-item2" href="{% url 'profile' %}">Profil</a>
+                <a class="collapse-item2" href="{% url 'logout' %}">Wyloguj</a>
+                <h6 class="collapse-header">Dodatkowe:</h6>
+                <a class="collapse-item2" href="{% url 'password_change' %}">Zmiana hasła</a>
+                {% else %}
                 <a class="collapse-item2" href="{% url 'login' %}">Logowanie</a>
                 <a class="collapse-item2" href="{% url 'register' %}">Rejestracja</a>
                 <h6 class="collapse-header">Dodatkowe:</h6>
-                <a class="collapse-item2" href="{% url 'forgot-password' %}">Przywracanie hasła</a>
+                <a class="collapse-item2" href="{% url 'password_reset' %}">Przywracanie hasła</a>
+                {% endif %}
             </div>
         </div>
     </li>

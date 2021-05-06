@@ -35,9 +35,11 @@ urlpatterns = [
     path('404/', TemplateView.as_view(template_name="404.html"), name="404"),
     path('dashboard/', TemplateView.as_view(template_name="dashboard.html"), name="dashboard"),
     # to users
-    path('login/', TemplateView.as_view(template_name="to_users/login.html"), name="login"),
-    path('register/', TemplateView.as_view(template_name="to_users/register.html"), name="register"),
-    path('forgot_password/', TemplateView.as_view(template_name="to_users/forgot-password.html"), name="forgot-password"),
+    path('account/', include('account.urls')),
+    # to social
+    path('social-auth/', include('social_django.urls', namespace='social')),
+    # images
+    path('images/', include('images.urls', namespace='images')),
     # to remove
     path('buttons/', TemplateView.as_view(template_name="to_remove/buttons.html"), name="buttons"),
     path('cards/', TemplateView.as_view(template_name="to_remove/cards.html"), name="cards"),
