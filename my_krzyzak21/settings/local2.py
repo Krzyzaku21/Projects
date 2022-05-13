@@ -1,5 +1,7 @@
 # python manage.py runserver --settings settings.local2
 # python debugger.py runserver_plus --cert-file cert.crt
+# pip freeze > requirements.txt
+# pip install -r requirements.txt
 from my_krzyzak21.settings import *
 import json
 import os

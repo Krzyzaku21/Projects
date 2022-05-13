@@ -21,7 +21,7 @@ DATABASES = {
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["www.krzyzak21.space", "krzyzak21.space"]
+ALLOWED_HOSTS = ["www.krzyzak21.fun", "krzyzak21.fun"]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
